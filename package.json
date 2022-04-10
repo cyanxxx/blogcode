@@ -23,5 +23,6 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0"
-  }
+  },
+  "node": "14.17.0"
 }
