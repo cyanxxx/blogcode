@@ -5,6 +5,7 @@ on:
       - master
 
 jobs:
+  if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ','), 'readme') }}
   simple_publish:
     runs-on: ubuntu-20.04
     steps:
