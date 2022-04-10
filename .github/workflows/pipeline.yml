@@ -5,8 +5,8 @@ on:
       - master
 
 jobs:
-  if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ','), 'readme') }}
   simple_publish:
+    if: ${{ !contains(join(github.event.commits.*.message, ','), 'readme') }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
