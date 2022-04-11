@@ -4,3 +4,7 @@
 - 一步步实现async,await 
   - [文章地址](http://114.132.224.28/?p=244)
   - [代码仓库](https://github.com/cyanxxx/blogcode/tree/master/how_to_realize_aysnc_await)
+
+- 一步步实现promise
+  - [文章地址](http://114.132.224.28/?p=262)
+  - [代码仓库](https://github.com/cyanxxx/blogcode/tree/master/how_to_realize_promise)
