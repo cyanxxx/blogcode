@@ -31,4 +31,3 @@ ob
     next: (value) => console.log(value),
     complete: () => console.log('complete')
   })
-
