@@ -272,3 +272,31 @@ p.then((result) => {
     resolve('otherSuccess')
   })
 }, console.error).then(console.log, console.error)
+
+const test = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('ok')
+  }, 500)
+})
+function wrapPromise (p) {
+  let cancelFlag = false
+  const newPromise = p.then((result) => {
+    if (cancelFlag) return Promise.reject(new Error('cancel'))
+    else return result
+  })
+
+  return [
+    () => {
+      cancelFlag = true
+    },
+    newPromise
+  ]
+}
+
+const [cancel, wrapTest] = wrapPromise(test)
+cancel()
+wrapTest.then((res) => {
+  console.log(res)
+}).catch(err => {
+  console.log(err)
+})
